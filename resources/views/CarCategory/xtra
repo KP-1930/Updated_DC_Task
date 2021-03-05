@@ -1,0 +1,51 @@
+  <?php
+    // explode the saved data back into an array                    
+                $carmodel = explode(',', $input->carmodel);
+                ?>
+
+
+
+    {!! Form::text('carmodel[]', Config::get('enums.CarModel'), $carmodel, ['multiple'=>'multiple']); !!}
+
+
+
+
+
+// 2nd//
+<option value="{{ $key }}" 
+               {{ (collect(old('carmodel'))->contains($key)) ? 'selected':'' }} 
+               {{ ($key = $input->carmodel) ? 'selected' : ''}}  
+               />
+               {{ $value }}
+            </option>
+
+
+
+            // 3rd///
+            {!! Form::select('carmodel', $data, ['multiple'=>'multiple']); !!}
+
+
+
+            // 4///
+
+
+ {{ Form::select('carmodel[]',old('data'), ['Renault Kiger' => 'Renault Kiger', 'Mahindra Thar' => 'Mahindra Thar', 'Kia Seltos' => 'Kia Seltos', 'Maruti Swift' => 'Maruti Swift', 'Hyundai Creta' => 'Hyundai Creta', 'Hyundai i20' => 'Hyundai i20', 'Hyundai i10' => 'Hyundai i10'],['class' => 'form-control select2' ,'id','lang']) }}
+
+
+
+
+
+                           <select class="form-control " id="lang" name="carmodel[]" multiple="multiple"  value="{{old('data')}}">                      
+                                        <option></option>
+                                        <option value="Renault Kiger" >Renault Kiger</option>
+                                        <option value="Mahindra Thar">Mahindra Thar</option>
+                                        <option value="Kia Seltos">Kia Seltos</option>
+                                        <option value="Maruti Swift">Maruti Swift</option>
+                                        <option value="Hyundai Creta">Hyundai Creta</option>
+                                        <option value="Hyundai i20">Hyundai i20</option>
+                                        <option value="Hyundai i10">Hyundai i10</option> 
+                            </select>   
+
+
+
+
